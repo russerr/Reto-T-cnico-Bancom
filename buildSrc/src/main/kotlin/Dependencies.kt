@@ -8,6 +8,19 @@ object Dependencies {
     const val composeUiTooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
     const val composeUiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
     const val composeRuntime = "androidx.compose.runtime:runtime:${Versions.compose}"
+    const val hiltNavigationCompose = "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigationComposeVersion}"
+
+
+    //const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+    const val runtimeCompose = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.runtimeCompose}"
+    const val runtimeKtx = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.runtimeKtx}"
+    //const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
+    //const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
+    const val navigationCompose = "androidx.navigation:navigation-compose:${Versions.navigationCompose}"
+    //const val constraintLayoutCompose = "androidx.constraintlayout:constraintlayout-compose:${Versions.constraintLayoutCompose}"
+    const val tracing = "androidx.tracing:tracing-ktx:${Versions.trace}"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.viewModel}"
+    const val accompanistPermission = "com.google.accompanist:accompanist-permissions:${Versions.accompanistPermission}"
 
     const val hiltAndroid = "com.google.dagger:hilt-android:${Versions.hilt}"
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
@@ -18,6 +31,7 @@ object Dependencies {
 
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val moshiConverter = "com.squareup.retrofit2:converter-moshi:${Versions.retrofit}"
+    const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.converterGson}"
 
     const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
@@ -35,6 +49,7 @@ fun DependencyHandler.retrofit() {
     implementation(Dependencies.moshiConverter)
     implementation(Dependencies.okHttp)
     implementation(Dependencies.okHttpLoggingInterceptor)
+    implementation(Dependencies.converterGson)
 }
 
 fun DependencyHandler.compose() {
@@ -43,6 +58,13 @@ fun DependencyHandler.compose() {
     implementation(Dependencies.composeUiGraphics)
     implementation(Dependencies.composeUiTooling)
     implementation(Dependencies.composeMaterial)
+    implementation(Dependencies.hiltNavigationCompose)
+    //mplementation(Dependencies.runtimeCompose)
+    //mplementation(Dependencies.runtimeKtx)
+    implementation(Dependencies.navigationCompose)
+    //implementation(Dependencies.tracing)
+    //implementation(Dependencies.viewModel)
+    //implementation(Dependencies.accompanistPermission)
     debugImplementation(Dependencies.composeUiToolingPreview)
 }
 
