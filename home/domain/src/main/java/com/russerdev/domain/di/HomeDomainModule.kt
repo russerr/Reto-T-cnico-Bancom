@@ -1,6 +1,7 @@
 package com.russerdev.domain.di
 
 import com.russerdev.domain.repository.HomeRepository
+import com.russerdev.domain.uses_cases.CreatePostUseCase
 import com.russerdev.domain.uses_cases.GetPostsUseCase
 import com.russerdev.domain.uses_cases.HomeUsesCases
 import dagger.Module
@@ -17,7 +18,8 @@ object HomeDomainModule {
     @Provides
     fun provideHomeUsesCases(repository: HomeRepository): HomeUsesCases {
         return HomeUsesCases(
-            getPostUseCase = GetPostsUseCase(repository)
+            getPostUseCase = GetPostsUseCase(repository),
+            createPostUseCase = CreatePostUseCase(repository)
         )
     }
 }
