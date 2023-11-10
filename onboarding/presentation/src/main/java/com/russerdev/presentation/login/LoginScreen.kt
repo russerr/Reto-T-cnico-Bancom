@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -85,11 +86,15 @@ fun LoginScreen(
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter)
         ) {
-            Button(onClick = { onEvent(LoginEvent.onClickLogin) }) {
-                Text(text = "Ingresar")
+            Button(onClick = { onEvent(LoginEvent.onClickLogin) }, enabled = !state.isLoading) {
+                if (state.isLoading) {
+                    CircularProgressIndicator(color = Color.White)
+                } else {
+                    Text(text = "Ingresar")
+                }
             }
 
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { /*TODO*/ }, enabled = !state.isLoading) {
                 Text(text = "Ingresar con google")
             }
         }
