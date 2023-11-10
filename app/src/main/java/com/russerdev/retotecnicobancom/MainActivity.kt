@@ -5,7 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.russerdev.core.navigation.loginGraph
+import com.russerdev.retotecnicobancom.navigation.homeModuleGraph
+import com.russerdev.retotecnicobancom.navigation.onboardingModuleGraph
 import com.russerdev.retotecnicobancom.ui.theme.RetoTecnicoBancomTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,7 +18,8 @@ class MainActivity : ComponentActivity() {
             RetoTecnicoBancomTheme {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "/Onboarding_Module") {
-                    loginGraph(navController)
+                    onboardingModuleGraph(navController)
+                    homeModuleGraph(navController)
                 }
             }
         }
