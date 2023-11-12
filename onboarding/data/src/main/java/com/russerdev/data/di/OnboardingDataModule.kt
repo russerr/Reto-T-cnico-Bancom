@@ -1,5 +1,7 @@
 package com.russerdev.data.di
 
+import com.russerdev.core.common.preferences.Preferences
+import com.russerdev.core.common.util.SessionManager
 import com.russerdev.data.repository.OnboardingRepositoryImpl
 import com.russerdev.domain.repository.OnboardingRepository
 import dagger.Module
@@ -14,7 +16,7 @@ object OnboardingDataModule {
 
     @Provides
     @Singleton
-    fun providerOnboardingRepository(): OnboardingRepository {
-        return OnboardingRepositoryImpl()
+    fun providerOnboardingRepository(dataStore: Preferences, sessionManager: SessionManager): OnboardingRepository {
+        return OnboardingRepositoryImpl(dataStore, sessionManager)
     }
 }

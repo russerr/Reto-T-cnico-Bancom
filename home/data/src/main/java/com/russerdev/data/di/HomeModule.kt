@@ -1,5 +1,7 @@
 package com.russerdev.data.di
 
+import com.russerdev.core.common.preferences.Preferences
+import com.russerdev.core.common.util.SessionManager
 import com.russerdev.data.remote.HomeApi
 import com.russerdev.data.repository.HomeRepositoryImpl
 import com.russerdev.domain.repository.HomeRepository
@@ -22,7 +24,11 @@ object HomeModule {
 
     @Provides
     @Singleton
-    fun providerHomeRepository(apiService: HomeApi): HomeRepository {
-        return HomeRepositoryImpl(apiService)
+    fun providerHomeRepository(
+        apiService: HomeApi,
+        dataStore: Preferences,
+        sessionManager: SessionManager
+    ): HomeRepository {
+        return HomeRepositoryImpl(apiService, dataStore, sessionManager)
     }
 }
