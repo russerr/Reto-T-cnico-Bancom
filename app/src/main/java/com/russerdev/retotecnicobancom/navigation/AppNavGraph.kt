@@ -9,7 +9,6 @@ import androidx.navigation.navigation
 import com.russerdev.presentation.home.HomeScreen
 import com.russerdev.presentation.login.LoginScreen
 import com.russerdev.presentation.login.LoginViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 fun NavGraphBuilder.onboardingModuleGraph(
     navController: NavController
